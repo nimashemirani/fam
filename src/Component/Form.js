@@ -13,7 +13,7 @@ export const Form = () => {
     const [contacts, setContacts] = useState([]);
     
     useEffect(() => {
-        fetch('https://localhost:44392/api/contacts/GetAll')
+        fetch('https://localhost:44315/api/contacts/GetAll')
           .then(response => response.json())
           .then(data => setContacts(data))
           .catch(error => console.error('Error fetching contacts:', error));
@@ -31,7 +31,7 @@ export const Form = () => {
           Telepone: Telepone
         };
     
-        fetch('https://localhost:44392/api/contacts/Create', {
+        fetch('https://localhost:44315/api/contacts/Create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export const Form = () => {
 
       
       const handleDeleteContact = (contactId) => {
-        fetch(`https://localhost:44392/api/contacts/Remove/${contactId}`, {
+        fetch(`https://localhost:44315/api/contacts/Remove/${contactId}`, {
           method: 'DELETE',
         })
           .then(response => {
